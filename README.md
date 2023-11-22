@@ -37,6 +37,10 @@ And if on Wayland:
 ```shell
 export WAYLAND_DISPLAY=wayland-0
 ```
+Additionally, if running as root on wayland, you'll need to grant the root user access to the display. From the weston user, run:
+```shell
+xhost si:localuser:root
+```
 Then, run the app from the top of the project directory:
 ```shell
 /usr/lib/jvm/jdk-21.0.1/bin/java -Djava.library.path=/usr/lib/ -cp "build/libs/app.jar:build/libs/*" \
